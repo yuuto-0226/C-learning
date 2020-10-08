@@ -3,12 +3,18 @@
 
 using namespace std;
 
+int temp[100000000];
 int fib(int n){
-    if(n==0)return 0;
-    if(n==1)
-        return 1;
-    else
-        return fib(n-1)+fib(n-2);
+    int result;
+    result=temp[n];
+    if(result==0){
+        if(n==0)return 0;
+        if(n==1)
+            return 1;
+        else
+            return fib(n-1)+fib(n-2);
+    }
+    return result;
 }
 
 int main(){
